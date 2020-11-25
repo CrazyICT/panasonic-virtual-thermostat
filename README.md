@@ -5,7 +5,7 @@ Create a virtual thermostat for the Panasonic Aquarea series (Heishamon required
 
 - Domoticz
 - Panasonic Aquerea heatpump
-- [a link](https://github.com/Egyras/HeishaMon)Heishamon)
+- [a link](https://github.com/Egyras/HeishaMon) Heishamon
 
 ## Setup
 
