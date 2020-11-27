@@ -1,14 +1,14 @@
 return {
-   on = {
-        timer = {
-                   'every 5 minutes'
-                }
-         },
+    on = {
+        devices = {
+            56 -- only run on temperature change
+        }
+    },
 
-        logging = {
-            level = domoticz.LOG_DEBUG, -- LOG_DEBUG or LOG_ERROR
-            marker = "WP: Thermostaat [ Script ]"
-        },
+    logging = {
+        level = domoticz.LOG_DEBUG, -- LOG_DEBUG or LOG_ERROR
+        marker = "WP: Thermostaat [ Script ]"
+    },
 
     execute = function(domoticz, item)
 
@@ -31,8 +31,8 @@ return {
         domoticz.log('setpoint temperatuur: ' .. setPoint .. ' oC ', domoticz.LOG_DEBUG)
 
         if (roomTemperature > (setPoint + 0.2)) then
+            wpState = 1  -- testing value
             if (true == switchWp) then
-                wpState = 1 -- only disable the state when the WP will be switched off
                 domoticz.devices(wpSwitchId).switchOff()
             end
         elseif (roomTemperature < (setPoint + 0.05)) then
